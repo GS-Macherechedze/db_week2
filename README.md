@@ -10,14 +10,11 @@ This week, we'll dive deeper into your project by mastering essential techniques
 - Organize retrieved data using the ORDER BY clause.
 
 <br/>
-    
-## Instructions
-This assignment is designed to be completed in approximately 2 hours.
 
 ### What you'll need:
-Access to a computer with internet access
-A text editor (e.g., Microsoft Word)
-Access to a sample project database (or instructor-provided data) that includes the table you designed in Week 1 (e.g., "Records"). See the database script in this repo titled "Week2.txt".
+- Access to a computer with internet access
+- A code editor (e.g., Visual Studio Code)
+- Access to a dataset. See the database script in this repository titled `hospital_db.sql`.
 
 ### Scenario:
 Imagine you’ve diligently collected and stored data using the database you designed last week. Now, it’s time to analyze that data and gain insights!
@@ -25,79 +22,60 @@ Imagine you’ve diligently collected and stored data using the database you des
 <br/>
 
 ## Submission:
-- Open MySQL WorkBench or any SQL management tool and import the file/database.
-- Copy the code in week2.txt and run it in MySQL Workbench.
-- Write SQL scripts to answer all questions below.
-- Submit your document by uploading it onto this repo.
+- Clone the project on your local computer
+- Create a file named ```answers.sql```
+- Run the queries on MySQL workbench and once they are successfull copy and paste on the ```answers.sql``` file on VS code
+- Make sure you clearly comment your answers. Example:
+```sql
+-- question 1.1
+SELECT * FROM table_one;
+
+-- question 1.2
+SELECT * FROM table_two;
+```
+- Once you finish the assignment, push the code to github
 
 <br/>
 
-## Part 1: Retrieving Data with SELECT (30 minutes)
-Based on the table you designed in Week 1, which likely includes columns like "record_id," "amount," "date," and "category," complete the following tasks:
-
-### Questions
-**1.1 Retrieving All Records:**<br/>
-Write an SQL query to retrieve all data points (columns) from the table (e.g., "Records").
-
-**1.2 Specific Columns:**<br/>
-Modify your query to select only specific columns relevant to your analysis. For example, you might choose "date," "category," and "amount" to analyze data trends by category and date.
-
-**1.3 Filtering by Date Range:**<br/>
-Write a query to retrieve records within a specific date range (e.g., January 1, 2021, to December 15, 2024). Remember to use the appropriate data type for the "date" column when specifying the date range in your query.
+## Part 1: Basic Data Retrieval
+**1.1).** Write a query to retrieve the ```first_name```, ```last_name``` and ```date_of_birth``` of all patients.<br/><br/>
+**1.2).** Write a query to retrieve the ```provider_id```, ```first_name``` and ```provider_specialty``` from the providers table.
 
 <br/>
 
-## Part 2: Filtering with WHERE Clause (45 minutes)
-
-### Questions
-**2.1 Filtering by Category:**<br/>
-Write a query to find all records belonging to a specific category (e.g., "Entertainment").
-
-**2.2 Filtering with Comparison Operators:**<br/>
-Find records with an amount greater than a certain value (e.g., $50).
-
-**2.3 Combining Filters (AND):**<br/>
-Refine your query to find records that meet multiple criteria. For example, you might search for records greater than $75 AND belonging to the "Food" category.
-
-**2.4 Combining Filters (OR):**<br/>
-Modify your query to find records belonging to one category or another (e.g., "Transportation" OR "Groceries").
-
-**2.5 Filtering with NOT:**<br/>
-Write a query to display records unrelated to a specific category (e.g., "Rent").
+## Part 2: Pattern-Based Filtering
+**2.1).** Write a query to retrieve all patients whose first names start with "Ab".<br/>
+**2.2).** Write a query to retrieve all providers whose specialties end with the letter "y".
 
 <br/>
 
-## Part 3: Sorting Retrieved Data (45 minutes)
-
-### Questions
-**3.1 Sorting by Amount:**<br/>
-Write a query to display all records sorted by amount in a specific order (e.g., descending order for highest to lowest values).
-
-**3.2 Sorting by Date and Category:**<br/>
-Modify your query to sort records based on multiple columns. For example, you might sort first by date (descending order) and then by category (ascending order) to see recent trends by category.
+## Part 3: Comparison Operators
+**3.1).** Write a query to find all patients born after 1st January 1980.<br/>
+**3.2).**<br/> Write a query to retrieve visits where the acuity level is 2 or higher.
 
 <br/>
 
-## Part 4: Database Upgrade
-Imagine you're tasked by the CIO to expand your database. Practice creating, modifying, and removing a table to manage your data.
+## Part 4: WHERE Clause with Logical Operators
+**4.1).** Write a query to find patients who speak Spanish.<br/>
+**4.2).** Write a query to retrieve visits where the reason is "Migraine" and the disposition is "Admitted".<br/>
+**4.3).** Write a query to find patients born between 1975 and 1980.
 
-### Questions
-**4.1 Creating a New Table:**<br/>
-We don’t have a table for income yet. Create a table named "Income" with columns for:
+<br/>
 
-income_id (INT) - Primary Key (auto-increment)
-amount (DECIMAL(10,2)) - NOT NULL
-date (DATE) - NOT NULL
-source (VARCHAR(50)) - NOT NULL
+## Part 5: Sorting Data
+**5.1).** Write a query to retrieve patient names and sort them in alphabetical order by last name.<br/>
+**5.2).** Write a query to list all visits sorted by the date of the visit, starting from the most recent.
 
-**4.2 Adding a New Column:**<br/>
-After creating the "Income" table, you realize you also want to track the income category "source" (e.g., "Salary," "Freelance Work"). Use ALTER TABLE to add a new column named "category" of type VARCHAR(50).
+<br/>
 
-**4.3 Removing a Column:**<br/>
-Let’s say you decide tracking the income source isn’t necessary for now. Use ALTER TABLE again to remove the "source" column from the "Income" table.
+## Part 6: Advanced Filtering
+**6.1).** Write a query to retrieve all admissions where the primary diagnosis is "Stroke" and the discharge disposition is "Home".<br/>
+**6.2).** Write a query to find providers who joined after 1995 and specialize in either Pediatrics or Cardiology.
 
-**4.4 Dropping a Table:**<br/>
-Imagine you no longer need the "Income" table entirely. Experiment by using DROP TABLE to permanently remove it from your database.
+<br/>
+
+## Bonus Challenge (optional)
+Write a query that lists all discharges where the patient was discharged home and the discharge date is within the first week of March 2018.
 
 <br/><br/>
-## Ensure to save all your queries in a document and upload it onto this repo.
+## NOTE: Do not fork this repository
